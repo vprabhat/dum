@@ -41,10 +41,11 @@ class Command(BaseCommand):
 
     def _show_files_to_delete(self, unused_media):
         self.stdout.write('These files will be removed:')
-
+        total_size = 0
         for f in unused_media:
+            total_size += os.path.getsize(f)
             self.stdout.write(f)
-
+        self.stdout.write('Total {} MB of unused files'.format(total_size//(1024**2)))
         self.stdout.write('Total {} unused files will be removed'.format(len(unused_media)))
 
     def handle(self, *args, **options):

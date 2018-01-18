@@ -8,7 +8,7 @@ This package provides management command `cleanup_unused_media` for Django appli
 
 1.  Install ``django-unused-media``:
     ```
-    pip install django-unused-media
+    pip install git+https://github.com/vprabhat/dum.git
     ```
 
     Python 2.7, 3.5, 3.6, PyPy are tested with tox.
