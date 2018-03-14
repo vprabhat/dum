@@ -42,8 +42,8 @@ class Command(BaseCommand):
     def _show_files_to_delete(self, unused_media):
         self.stdout.write('These files will be removed:')
         total_size = 0
-        filename = '/etc/to_delete_files.txt'
-        with open('/etc/to_delete_files.txt', 'w') as file:
+        filename = 'to_delete_files.txt'
+        with open('to_delete_files.txt', 'w') as file:
             for f in unused_media:
                 total_size += os.path.getsize(f)
                 self.stdout.write(f)
